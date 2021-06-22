@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>timetable</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+    <div id="tool" style="display: inline-block;">
+    <h1 id="title">전공시간표</h1>
+    <h4>부/복수전공:</h4>
+    <select id="select" onchange="alert_select_value(this);">
+        <option value="#all" selected>전체</option>
+        <option value="#software_choice">소프트웨어</option>
+        <option value="#statistics_choice">응용통계학과</option>
+        <option value="index.html">없음</option>
+    </select>
+    <table class="choice" id="finance_choice">
+            <td id="semester">금융수학과</td>
+            <td>
+                <input type='checkbox'
+                id="gtr"
+                name='2-2' 
+                value='금융투자와 리스크 관리(fm)'
+                onclick='getCheckboxValue()'/>
+                <label for="gtr">금융투자와 리스크 관리</label>
+                <br>
+                <input type='checkbox' 
+                id="gip2"
+                name='2-2' 
+                value='금융IT프로그래밍2(fm)'
+                onclick='getCheckboxValue()' />
+                <label for="gip2">금융IT프로그래밍2</label>
+                <br>
+                <input type='checkbox'
+                id="mb2"
+                name='2-2' 
+                value='미분방정식2(fm)'
+                onclick='getCheckboxValue()'/>
+                <label for="mb2">미분방정식2</label>
+                <br>
+                <input type='checkbox'
+                id="sd2"
+                name='2-2' 
+                value='선형대수2(fm)'
+                onclick='getCheckboxValue()'/>
+                <label for="sd2">선형대수2</label>
+                <br>
+                <input type='checkbox'
+                id="gm2"
+                name='2-2' 
+                value='고급미적분학2(fm)'
+                onclick='getCheckboxValue()'/>
+                <label for="gm2">고급미적분학2</label>
+                <br>
+                <input type='checkbox'
+                id="tg"
+                name='2-2' 
+                value='통계학(fm)'
+                onclick='getCheckboxValue()'/>
+                <label for="tg">통계학</label>
+                <br>
+                <input type='checkbox'
+                id="sb"
+                name='value0' 
+                value='사회봉사(fm)'
+                onclick='getCheckboxValue()'/>
+                <label for="sb">사회봉사</label>
+            </td>
+    </table>
+    <!--복전 표시-->
+    <table id="software_choice" class="choice">
+            <td id="semester">소프트웨어</td>
+            <td>
+                <input type='checkbox'
+                id="gar"
+                name="value2"
+                value="기업과 리더십(sw)"
+                onclick='getCheckboxValue()'/>
+                <label for="gar">기업과 리더십</label>
+                <br>
+                <input type='checkbox'
+                id="sgp"
+                name='2-2' 
+                value='소프트웨어구현패턴(sw)'
+                onclick='getCheckboxValue()'/>
+                <label for="sgp">소프트웨어구현패턴</label>
+                <br>
+                <input type='checkbox' 
+                id="rg"
+                name='2-2' 
+                value='로봇공학(sw)'
+                onclick='getCheckboxValue()' />
+                <label for="rg">로봇공학</label>
+                <br>
+                <input type='checkbox'
+                id="cnas"
+                name='2-2' 
+                value='컴퓨터네트워크 및 실습(sw)'
+                onclick='getCheckboxValue()'/>
+                <label for="cnas">컴퓨터네트워크 및 실습</label>
+                <br>
+                <input type='checkbox'
+                id="ar"
+                name='2-2' 
+                value='알고리즘(sw)'
+                onclick='getCheckboxValue()'/>
+                <label for="ar">알고리즘</label>
+                <br>
+                <input type='checkbox'
+                id="dbas"
+                name='2-2' 
+                value='데이터베이스 및 실습(sw)'
+                onclick='getCheckboxValue()'/>
+                <label for="dbas">데이터베이스 및 실습</label>
+                <br>
+                <input type='checkbox'
+                id="gjhgr"
+                name='value2' 
+                value='경제학개론(sw)'
+                onclick='getCheckboxValue()'/>
+                <label for="gjhgr">경제학개론</label>
+            </td>
+    </table>
+    <table id="statistics_choice" class="choice">
+        <td id="semester">응용통계학과</td>
+        <td>
+            <input type='checkbox'
+            id="ts2"
+            name='2-2' 
+            value='통계수학2(st)'
+            onclick='getCheckboxValue()'/>
+            <label for="ts2">통계수학2</label>
+            <br>
+            <input type='checkbox' 
+            id="sgt2"
+            name='2-2' 
+            value='사회과학통계분석2(st)'
+            onclick='getCheckboxValue()' />
+            <label for="sgt2">사회과학통계분석2</label>
+            <br>
+            <input type='checkbox'
+            id="st2"
+            name='2-2' 
+            value='수리통계학2(st)'
+            onclick='getCheckboxValue()'/>
+            <label for="st2">수리통계학2</label>
+            <br>
+            <input type='checkbox'
+            id="jb2"
+            name='2-2' 
+            value='조사방법론2(st)'
+            onclick='getCheckboxValue()'/>
+            <label for="jb2">조사방법론2</label>
+            <br>
+            <input type='checkbox'
+            id="pgi"
+            name='2-2' 
+            value='품질경영일반(st)'
+            onclick='getCheckboxValue()'/>
+            <label for="pgi">품질경영일반</label>
+        </td>
+    </table>
+    </div>
+
+    <!--양글 화면에 출력-->
+    <div style="display:inline-flex;">
+        <div style="display: grid;">
+            <br>
+            <div id="num"><span id="score">0</span><span>학점</span></div>
+            <div id="result"></div>
+        </div>
+    </div>
+    <div id="yangle"><span class="Y">Y</span><span class="a">a</span><span class="n">n</span><span class="g">g</span><span class="l">l</span><span class="e">e</span></div>
+    
+</body>
+</html>

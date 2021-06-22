@@ -1,0 +1,96 @@
+html{
+    margin-left:10px;
+}
+
+#tool{
+    margin-right:40px;
+}
+
+.choice{
+    border: 2px black solid;
+    border-radius: 8px;
+    width: 330px;
+    margin:20px;
+}
+
+#value{
+    border: 2px black solid;
+    width:250px;
+    height:450px;
+    font-weight:bold;
+}
+
+#semester{
+    font-weight: bold;
+    position: relative;
+    top:-8px;
+}
+
+#num{
+    font-weight:bold;
+    font-size:18px;
+    margin-left:5px;
+}
+
+#result{
+    border:2px solid black;
+    border-radius:8px;
+    width: 300px;
+    padding-top:25px;
+    padding-bottom:10px;
+    padding-left:8px;
+    font-weight:bold;
+    position:relative;
+    top:10px;
+}
+
+hr{
+    font-size:40px;
+}
+
+
+
+.st{
+    position:relative;
+    left:390px;
+    top:-157px;
+}
+
+#select{
+    height:34px;
+    width:120px;
+    position:relative;
+    top:-48px;
+    left:100px;
+}
+
+#yangle{
+    font-weight:bold;
+    font-size:18px;
+    padding-left:20px;
+    padding-top:10px;
+}
+
+.Y{
+    color: #4285f4;
+}
+
+.a{
+    color: #ea4335;
+}
+
+.n{
+    color: #fbbc05;
+}
+
+.g{
+    color: #4285f4;
+}
+
+.l{
+    color: #34a853;
+}
+
+.e{
+    color: #ea4335;
+}
