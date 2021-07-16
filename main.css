@@ -1,16 +1,28 @@
-html{
-    margin-left:10px;
+body{
+    margin-left: 20px;
+    margin-bottom: 20px;
 }
 
 #tool{
     margin-right:40px;
 }
 
+.box{
+    margin-top:1vh;
+    margin-left:20px;
+    display:flex;
+}
+
+.choice-box{
+    margin-right:8vw;
+}
+
+
 .choice{
     border: 2px black solid;
     border-radius: 8px;
     width: 330px;
-    margin:20px;
+    margin:20px 0px;
 }
 
 #value{
@@ -42,6 +54,10 @@ html{
     font-weight:bold;
     position:relative;
     top:10px;
+}
+
+#result-box{
+    margin-top:-30px;
 }
 
 hr{
